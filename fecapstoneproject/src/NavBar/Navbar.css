@@ -1,0 +1,106 @@
+.NavBar {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+
+.Logo {
+    width: 324px;
+    height: 47px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: 'Sarala', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer; 
+      
+    
+}
+
+
+.Logo span {
+color: #002FD8;
+font-family: 'Sarala', sans-serif;
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+
+
+.NavItem {
+    color: #000;
+
+    font-family: 'Sarala', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    line-height: normal;
+    margin-right: 55px;
+}
+.NavItem:hover {
+    color: #002FD8;
+    font-family: 'Sarala', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    line-height: normal;
+    margin-right: 55px;
+}
+
+
+.NavButton {
+border-radius: 30px;
+border: 2px solid #002FD8;
+font-family: 'Sarala', sans-serif;
+font-weight: 400;
+font-size: 18px;
+background-color: transparent;
+width: 115px;
+height: 41px;
+flex-shrink: 0;
+color: #002fd8;
+margin: 10px;
+    
+}
+.NavButton:hover {
+    border-radius: 30px;
+    font-family: 'Sarala', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    background-color: transparent;
+    width: 115px;
+    height: 41px;
+    flex-shrink: 0;
+    color: #ffffff;
+    margin: 10px;
+    background-color: #002FD8;
+        
+    }
+
+a:link {
+    text-decoration: none;
+    
+}
+
+a:visited {
+    text-decoration: none;
+    
+}
+
+a:hover {
+    text-decoration: none;
+    
+}
+
+a:active {
+    text-decoration: none;
+    
+}
+button {
+    cursor: pointer;
+}
