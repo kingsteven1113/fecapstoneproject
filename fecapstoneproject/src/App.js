@@ -7,6 +7,10 @@ import React, { useEffect } from 'react';
 
 function App() {
   return (
+    <>
+    <head>
+      
+    </head>
    <div className='App'>
       <BrowserRouter>
         <NavBar>
@@ -14,6 +18,7 @@ function App() {
         </NavBar>
       </BrowserRouter>
    </div>
+   </>
   );
 }
 
