@@ -1,4 +1,3 @@
-// import &#39;./NavBar.css&#39;
 import './Navbar.css';
 
 export default function NavBar() {
@@ -8,12 +7,12 @@ export default function NavBar() {
         </div>
         <div className="NavItemList">
             <nav>
-            <a className="NavItem" href="E:/Coding/grihf-frontend_capstone_starter_code/Landing_Page/LandingPage.html">Home</a>
+            <a className="NavItem">Home</a>
             <a className="NavItem" href="#">Appointments</a>
             <a className="NavItem" href="#">Health Blog</a>
             <a className="NavItem" href="#">Reviews</a>
-            <a href="E:/Coding/grihf-frontend_capstone_starter_code/Sign_Up/Sign_Up.html"><button type="button" className="NavButton">Sign Up</button></a>
-            <a href="E:\Coding\grihf-frontend_capstone_starter_code\Login\Login.html"><button type="button" className="NavButton">Login</button></a>
+            <a className="NavButton">Sign Up</a>
+            <a className="NavButton">Login</a>
             </nav>
     </div>
     </div>
