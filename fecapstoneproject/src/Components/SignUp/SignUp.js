@@ -1,17 +1,32 @@
 import './SignUp.css';
 import Login from '../Login/Login';
+import { useLocation, useNavigate, useNavigation } from 'react-router-dom';
+import queryString from 'query-string';
+import { useState } from 'react';
+import { PatternFormat } from 'react-number-format';
 
-let tele = document.querySelector('#telle');
+ /* let tele = document.querySelector('#telle');
 
     tele.addEventListener('keyup', function(e){
       if (Event.key != 'Backspace' && (tele.value.length === 3 || tele.value.length === 7)){
       tele.value += '-';
       }
-    });
+    }); */
+
+    
+
+
+
+
 
 export default function SignUp() {
+
+    const navigate = useNavigate()
+
+    const [phone, setPhone] = useState('');
+    
     return (
-        <form className="SignUpForm">
+        <form className="SignUpForm" onSubmit={() => navigate("/")}>
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 31 31" fill="none" className="XButton">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M2.37358 0L0 2.37358L12.8037 15.1772L6.87408e-06 27.9809L2.37359 30.3545L15.1772 17.5508L27.9809 30.3545L30.3545 27.9809L17.5508 15.1772L30.3545 2.37358L27.9809 0L15.1772 12.8037L2.37358 0Z" fill="black"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M2.37358 0L0 2.37358L12.8037 15.1772L6.87408e-06 27.9809L2.37359 30.3545L15.1772 17.5508L27.9809 30.3545L30.3545 27.9809L17.5508 15.1772L30.3545 2.37358L27.9809 0L15.1772 12.8037L2.37358 0Z" fill="black"/>
@@ -39,7 +54,14 @@ export default function SignUp() {
             </div>
             <div className="PhoneNumberDiv">
                 <p>Phone number <span>*</span></p>
-                <input id="telle" maxLength={10} title="Enter Your Phone Number" type="tel" placeholder="Enter your phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+                <PatternFormat 
+                    type="tel"
+                    format="+1 (###) ###-####" 
+                    mask="_" 
+                    onValueChange={value => setPhone(value.formattedValue)}
+                    placeholder='Enter Your Phone Number (XXX)-XXX-XXXX'
+                    required
+                />
             </div>
             <div className="EmailDiv">
                 <p>Email <span>*</span></p>

@@ -1,7 +1,10 @@
 import './Login.css';
 import SignUp from '../SignUp/SignUp';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+
+    const navigate = useNavigate()
     return (
         <div className="LoginForm">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 31 31" fill="none" className="XButton">
@@ -16,7 +19,7 @@ export default function Login() {
             </div>
         </div>
         <div className="SUF_content">
-            <form action="">
+            <form action="" onSubmit={() => navigate("/")}>
                 <div className="SUF_TextInputs"> 
                         <div className="EmailDiv">
                             <p>Email <span>*</span></p>
