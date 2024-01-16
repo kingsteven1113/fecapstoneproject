@@ -71,7 +71,7 @@ margin-bottom: 10px;
 .SUF_content select {
     background: #FFF;
     box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.13);
-    width: 70%;
+    width: 100%;
     height: 53px;
     font-family: 'Sarala', sans-serif;
     font-weight: 700;
@@ -138,6 +138,8 @@ font-size: 14px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+cursor: auto;
+text-decoration: none;
 }
 .SUF_Buttons {
     margin-top: 25px;
@@ -153,8 +155,10 @@ line-height: normal;
     font-weight: 400;
     font-style: normal;
     margin-bottom: 10px;
+    margin-top: 0;
     font-size: 18px;
     padding-top: 5px;
+    padding-bottom: 5px;
     cursor: pointer;
     
     

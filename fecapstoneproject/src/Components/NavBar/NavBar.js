@@ -1,4 +1,8 @@
+import LandingPage from '../Landing_Page/LandingPage';
+import Login from '../Login/Login';
+import SignUp from '../SignUp/SignUp';
 import './Navbar.css';
+import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
     return (
@@ -7,12 +11,12 @@ export default function NavBar() {
         </div>
         <div className="NavItemList">
             <nav>
-            <a className="NavItem">Home</a>
-            <a className="NavItem" href="#">Appointments</a>
-            <a className="NavItem" href="#">Health Blog</a>
-            <a className="NavItem" href="#">Reviews</a>
-            <a className="NavButton">Sign Up</a>
-            <a className="NavButton">Login</a>
+            <NavLink to="/" className="NavItem">Home</NavLink>
+            <NavLink className="NavItem">Appointments</NavLink>
+            <NavLink className="NavItem">Health Blog</NavLink>
+            <NavLink className="NavItem">Reviews</NavLink>
+            <NavLink to="SignUp" className="NavButton">Sign Up</NavLink>
+            <NavLink to="Login" className="NavButton">Login</NavLink>
             </nav>
     </div>
     </div>

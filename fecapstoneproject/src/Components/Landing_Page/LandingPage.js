@@ -1,6 +1,6 @@
 import './LandingPage.css';
 
-export default function NavBar() {
+export default function LandingPage() {
     return (
         <section class="hero-section">
         <div>
