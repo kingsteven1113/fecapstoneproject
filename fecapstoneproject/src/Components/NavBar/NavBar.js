@@ -1,6 +1,3 @@
-import LandingPage from '../Landing_Page/LandingPage';
-import Login from '../Login/Login';
-import SignUp from '../SignUp/SignUp';
 import './Navbar.css';
 import { NavLink } from "react-router-dom";
 
@@ -13,6 +10,7 @@ export default function NavBar() {
             <nav>
             <NavLink to="/" className="NavItem">Home</NavLink>
             <NavLink className="NavItem">Appointments</NavLink>
+            <NavLink to='instant-consultation' className="NavItem">Instant Consultation</NavLink>
             <NavLink className="NavItem">Health Blog</NavLink>
             <NavLink className="NavItem">Reviews</NavLink>
             <NavLink to="SignUp" className="NavButton">Sign Up</NavLink>
