@@ -3,6 +3,7 @@ import Login from '../Login/Login';
 import { useLocation, useNavigate, useNavigation } from 'react-router-dom';
 import { useState } from 'react';
 import { PatternFormat } from 'react-number-format';
+import { API_URL } from '../../config';
 
 
 export default function SignUp() {
@@ -69,7 +70,7 @@ export default function SignUp() {
         <div className="SUF_content">
             <div className="SUF_TextInputs">  
             <div className="RoleDiv">
-            <p>Role <span>*</span></p>
+            <p>Role <span title='This is a required field.'>*</span></p>
             <select 
             title="Select Role" 
             name="role" 
@@ -82,7 +83,7 @@ export default function SignUp() {
             </select>
             </div>  
             <div className="NameDiv">
-                <p>Name <span>*</span></p>
+                <p>Name <span title='This is a required field.'>*</span></p>
                 <input 
                 name='Name'
                 id='Name'
@@ -93,7 +94,7 @@ export default function SignUp() {
                 required />
             </div>
             <div className="PhoneNumberDiv">
-                <p>Phone number <span>*</span></p>
+                <p>Phone number <span title='This is a required field.'>*</span></p>
                 <PatternFormat
                     id='phone'
                     name='phone' 
@@ -106,7 +107,7 @@ export default function SignUp() {
                 />
             </div>
             <div className="EmailDiv">
-                <p>Email <span>*</span></p>
+                <p>Email <span title='This is a required field.'>*</span></p>
                 <input 
                 name='Email'
                 id='Email'
@@ -117,7 +118,7 @@ export default function SignUp() {
                 required />
             </div>
             <div className="PasswordDiv">
-                <p>Password <span>*</span></p>
+                <p>Password <span title='This is a required field.'>*</span></p>
                 <input 
                 name='Password'
                 id='Password'
