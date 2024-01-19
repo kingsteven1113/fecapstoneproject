@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import './DoctorCardIC.css';
-import AppointmentFormIC from '../AppointmentFormIC/AppointmentFormIC'
+import './DoctorCardBA.css';
+import AppointmentFormBA from '../AppointmentFormBA/AppointmentFormBA'
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -42,24 +42,18 @@ const DoctorCardBA = ({ name, speciality, experience, ratings, profilePic }) => 
           <div className="doctor-card-detail-consultationfees">Ratings: {ratings}</div>
         </div>
         {/* for reference  */}
-        <div>
+        {/*<div>
               <button className='book-appointment-btn'>                    
                 <div>Book Appointment</div>
               <div>No Booking Fee</div>
             </button>
               </div>
-      </div>
+        </div>*/}
 
 
-      {/* <div className="doctor-card-options-container">
-        <div>  <button className='book-appointment-btn'>                    
-              <div>Book Appointment</div>
-            <div>No Booking Fee</div>
-          </button> </div>
-          
-            </div> */}
+      
 
-<div className="doctor-card-options-container">
+    <div className="doctor-card-options-container">
        <Popup
           style={{ backgroundColor: '#FFFFFF' }}
           trigger={
@@ -104,14 +98,16 @@ const DoctorCardBA = ({ name, speciality, experience, ratings, profilePic }) => 
                   ))}
                 </>
               ) : (
-                <AppointmentFormIC doctorName={name} doctorSpeciality={speciality} onSubmit={handleFormSubmit} />
+                <AppointmentFormBA doctorName={name} doctorSpeciality={speciality} onSubmit={handleFormSubmit} />
               )}
             </div>
           )}
         </Popup> 
       </div>
     </div>
+    </div>
   );
+  
 };
 
 export default DoctorCardBA;

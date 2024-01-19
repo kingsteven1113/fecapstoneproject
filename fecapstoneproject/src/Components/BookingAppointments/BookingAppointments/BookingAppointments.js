@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import './InstantConsultation.css';
+import './BookingAppointments.css';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import FindDoctorSearchIC from './FindDoctorSearchIC/FindDoctorSearchIC';
-import DoctorCardIC from './DoctorCardIC/DoctorCardIC';
-import FindDoctorSearchBA from '../../BookingAppointments/BookingAppointments/FindDoctorSearchBA/FindDoctorSearchBA';
+import FindDoctorSearchBA from './FindDoctorSearchBA/FindDoctorSearchBA';
+import DoctorCardBA from './DoctorCardBA/DoctorCardBA';
 
-const InstantConsultation = () => {
+const BookingAppointments = () => {
     const [searchParams] = useSearchParams();
     const [doctors, setDoctors] = useState([]);
     const [filteredDoctors, setFilteredDoctors] = useState([]);
@@ -62,14 +61,14 @@ const InstantConsultation = () => {
     return (
         <center>
             <div  className="searchpage-container">
-            <FindDoctorSearchIC onSearch={handleSearch} />
+            <FindDoctorSearchBA onSearch={handleSearch} />
             <div className="search-results-container">
             {isSearched ? (
                 <center>
                     <h2>{filteredDoctors.length} doctors are available {searchParams.get('location')}</h2>
                     <h3>Book appointments with minimum wait-time & verified doctor details</h3>
                     {filteredDoctors.length > 0 ? (
-                    filteredDoctors.map(doctor => <DoctorCardIC className="doctorcard" {...doctor} key={doctor.name} />)
+                    filteredDoctors.map(doctor => <DoctorCardBA className="doctorcard" {...doctor} key={doctor.name} />)
                     ) : (
                     <p>No doctors found.</p>
                     )}
@@ -83,4 +82,4 @@ const InstantConsultation = () => {
     )
 }
 
-export default InstantConsultation
+export default BookingAppointments;

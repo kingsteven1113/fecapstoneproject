@@ -13,9 +13,11 @@ const AppointmentFormBA = ({ doctorName, doctorSpeciality, onSubmit }) => {
   
     const handleFormSubmit = (e) => {
       e.preventDefault();
-      onSubmit({ name, phoneNumber });
+      onSubmit({ name, phoneNumber, dateOfAppointment, timeOfAppointment });
       setName('');
       setPhoneNumber('');
+      setDateOfAppointment('');
+      setTimeOfAppointment('');
     };
   
     return (
@@ -56,8 +58,7 @@ const AppointmentFormBA = ({ doctorName, doctorSpeciality, onSubmit }) => {
             id="time"
             value={timeOfAppointment}
             onChange={(e) => setTimeOfAppointment(e.target.value)}
-            required
-          >
+            required>
           <option value="Select a Time" disabled selected hidden></option>
           <option value="9:00AM">9:00AM</option>
           <option value='11:00AM'>11:00AM</option>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './FindDoctorSearch.css';
+import './FindDoctorSearchBA.css';
 import { useNavigate, Navigate } from 'react-router-dom';
 
 
@@ -15,13 +15,13 @@ const FindDoctorSearchBA = () => {
     const handleDoctorSelect = (speciality) => {
         setSearchDoctor(speciality);
         setDoctorResultHidden(true);
-        navigate(`/instant-consultation?speciality=${speciality}`);
+        navigate(`/booking-appointments?speciality=${speciality}`);
         window.location.reload();
     }
     return (
         <div className='finddoctor'>
             <center>
-                <h1>Find a doctor and Consult instantly</h1>
+                <h1>Find a doctor and book an appointment for a consultation</h1>
                 <div>               <i style={{color:'#000000',fontSize:'20rem'}} className="fa fa-user-md"></i>
 </div>                <div className="home-search-container"  style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
                     <div className="doctor-search-box">
