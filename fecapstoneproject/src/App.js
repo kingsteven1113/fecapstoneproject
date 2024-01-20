@@ -8,13 +8,14 @@ import SignUp from './Components/SignUp/SignUp';
 import Login from './Components/Login/Login';
 import InstantConsultation from './Components/InstantConsultationBooking/InstantConsultationBooking/InstantConsultation';
 import BookingAppointments from './Components/BookingAppointments/BookingAppointments/BookingAppointments';
+import Notification from './Components/Notifications/Notifications';
 
 function App() {
   return (
     <>
    <div className='App'>
       <BrowserRouter>
-        <NavBar/>
+        <Notification>
           <Routes>
             <Route path='/' element={<LandingPage/>} />
             <Route path='SignUp' element={<SignUp/>} />
@@ -22,6 +23,7 @@ function App() {
             <Route path="/instant-consultation" element={<InstantConsultation />} />
             <Route path="/booking-appointments" element={<BookingAppointments />} />
           </Routes>
+        </Notification>
       </BrowserRouter>
    </div>
    </>
