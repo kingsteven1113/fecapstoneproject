@@ -37,6 +37,11 @@ const Notification = ({ children }) => {
               <p className="appointment-card__message">
                 <strong>Doctor:</strong> {doctorData?.name}
               </p>
+              <p><strong> Specialty</strong> {doctorData?.specialty}</p>
+              <p><strong>Appointment Time:</strong>{appointmentData?.timeofAppointment}</p>
+              <p><strong>Appointment Date:</strong>{appointmentData?.dateOfAppointment}</p>
+              <p><strong>Patient Name:</strong>{appointmentData?.name}</p>
+              <p><strong>Patient Phone Number:</strong>{appointmentData?.phoneNumber}</p>
             </div>
           </div>
         </>
