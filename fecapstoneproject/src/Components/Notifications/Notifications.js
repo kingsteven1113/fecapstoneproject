@@ -6,12 +6,13 @@ const Notification = ({ children }) => {
   const [username, setUsername] = useState("");
   const [doctorData, setDoctorData] = useState(null);
   const [appointmentData, setAppointmentData] = useState(null);
+  const [notificationPanel, setNotificationPanel] = useState('')
 
   useEffect(() => {
     const storedUsername = sessionStorage.getItem('email');
     const storedDoctorData = JSON.parse(localStorage.getItem('doctorData'));
     const storedAppointmentData = JSON.parse(localStorage.getItem(storedDoctorData?.name));
-
+    const notificationPanel = document.getElementById
     if (storedUsername) {
       setIsLoggedIn(true);
       setUsername(storedUsername);
@@ -24,9 +25,11 @@ const Notification = ({ children }) => {
     if (storedAppointmentData) {
       setAppointmentData(storedAppointmentData);
     }
+    
+    
   }, []);
   return (
-    <div>
+    <div id='Notification'>
       <NavBar ></NavBar>
       {children}
       {isLoggedIn && appointmentData && (
