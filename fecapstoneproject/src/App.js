@@ -9,6 +9,7 @@ import Login from './Components/Login/Login';
 import InstantConsultation from './Components/InstantConsultationBooking/InstantConsultationBooking/InstantConsultation';
 import BookingAppointments from './Components/BookingAppointments/BookingAppointments/BookingAppointments';
 import Notification from './Components/Notifications/Notifications';
+import FindDoctorSearchBA from './Components/FindDoctorSearchBA/FindDoctorSearchBA';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
             <Route path='SignUp' element={<SignUp/>} />
             <Route path='Login' element={<Login/>} />
             <Route path="/instant-consultation" element={<InstantConsultation />} />
-            <Route path="/booking-appointments" element={<BookingAppointments />} />
+            <Route path="/search/doctors" element={<BookingAppointments />} />
+            <Route path="/finddoctor" element={<FindDoctorSearchBA />} />
           </Routes>
         </Notification>
       </BrowserRouter>

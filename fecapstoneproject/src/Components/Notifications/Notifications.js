@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import NavBar from '../NavBar/NavBar';
 import './Notifications/Notifications.css';
 
-const Notification = ({ children }) => {
-  const open = 'display: block'
-  const closed = 'display: none'
+const Notifications = ({ children }) => {
+  const open = 'display: block';
+  const closed = 'display: none';
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
   const [doctorData, setDoctorData] = useState(null);
@@ -21,8 +21,11 @@ const Notification = ({ children }) => {
     if (storedUsername) {
       setIsLoggedIn(true);
       setUsername(storedUsername);
-      setNotificationPanel(open)
 
+    }
+    else {
+      setIsLoggedIn(false);
+      setNotificationPanel(closed)
     }
 
     if (storedDoctorData) {
@@ -47,13 +50,13 @@ const Notification = ({ children }) => {
               <p className="appointment-card__message">
                 <strong>Doctor:</strong> {doctorData?.name}
               </p>
-              <p><strong> Specialty</strong> {doctorData?.specialty}</p>
+              <p className="appointment-card__message"><strong> Specialty</strong> {doctorData.specialty}</p>
               {appointmentData.map(appointment => (
                                 <div key={appointment.id}>
-              <p><strong>Appointment Time:</strong>{appointmentData?.timeofAppointment}</p>
-              <p><strong>Appointment Date:</strong>{appointmentData?.dateOfAppointment}</p>
-              <p><strong>Patient Name:</strong>{appointmentData?.name}</p>
-              <p><strong>Patient Phone Number:</strong>{appointmentData?.phoneNumber}</p>
+              <p className="appointment-card__message"><strong>Appointment Time:</strong>{appointmentData.timeofAppointment}</p>
+              <p className="appointment-card__message"><strong>Appointment Date:</strong>{appointmentData.dateOfAppointment}</p>
+              <p className="appointment-card__message"><strong>Patient Name:</strong>{appointmentData.name}</p>
+              <p className="appointment-card__message"><strong>Patient Phone Number:</strong>{appointmentData.phoneNumber}</p>
               </div>
               ))}
             </div>
@@ -64,4 +67,4 @@ const Notification = ({ children }) => {
   );
 };
 
-export default Notification;
+export default Notifications;
