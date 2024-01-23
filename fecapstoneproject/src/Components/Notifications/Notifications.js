@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from '../NavBar/NavBar';
+import './Notifications/Notifications.css';
 
 const Notification = ({ children }) => {
+  const open = 'display: block'
+  const closed = 'display: none'
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
   const [doctorData, setDoctorData] = useState(null);
   const [appointmentData, setAppointmentData] = useState(null);
-  const [notificationPanel, setNotificationPanel] = useState(closed)
+  const [notificationPanel, setNotificationPanel] = useState(open)
 
-  const open = 'display: block'
-  const closed = 'display: none'
+  
 
   useEffect(() => {
     const storedUsername = sessionStorage.getItem('email');
@@ -46,10 +48,14 @@ const Notification = ({ children }) => {
                 <strong>Doctor:</strong> {doctorData?.name}
               </p>
               <p><strong> Specialty</strong> {doctorData?.specialty}</p>
+              {appointmentData.map(appointment => (
+                                <div key={appointment.id}>
               <p><strong>Appointment Time:</strong>{appointmentData?.timeofAppointment}</p>
               <p><strong>Appointment Date:</strong>{appointmentData?.dateOfAppointment}</p>
               <p><strong>Patient Name:</strong>{appointmentData?.name}</p>
               <p><strong>Patient Phone Number:</strong>{appointmentData?.phoneNumber}</p>
+              </div>
+              ))}
             </div>
           </div>
         </>

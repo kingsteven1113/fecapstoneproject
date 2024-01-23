@@ -4,6 +4,7 @@ import 'reactjs-popup/dist/index.css';
 import './DoctorCardBA.css';
 import AppointmentFormBA from '../AppointmentFormBA/AppointmentFormBA'
 import { v4 as uuidv4 } from 'uuid';
+import { Link } from 'react-router-dom';
 
 
 const DoctorCardBA = ({ name, speciality, experience, ratings, profilePic }) => {
