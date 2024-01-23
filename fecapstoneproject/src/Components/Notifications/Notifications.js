@@ -6,16 +6,21 @@ const Notification = ({ children }) => {
   const [username, setUsername] = useState("");
   const [doctorData, setDoctorData] = useState(null);
   const [appointmentData, setAppointmentData] = useState(null);
-  const [notificationPanel, setNotificationPanel] = useState('')
+  const [notificationPanel, setNotificationPanel] = useState(closed)
+
+  const open = 'display: block'
+  const closed = 'display: none'
 
   useEffect(() => {
     const storedUsername = sessionStorage.getItem('email');
     const storedDoctorData = JSON.parse(localStorage.getItem('doctorData'));
     const storedAppointmentData = JSON.parse(localStorage.getItem(storedDoctorData?.name));
-    const notificationPanel = document.getElementById
+    
     if (storedUsername) {
       setIsLoggedIn(true);
       setUsername(storedUsername);
+      setNotificationPanel(open)
+
     }
 
     if (storedDoctorData) {
@@ -29,12 +34,12 @@ const Notification = ({ children }) => {
     
   }, []);
   return (
-    <div id='Notification'>
+    <div>
       <NavBar ></NavBar>
       {children}
       {isLoggedIn && appointmentData && (
         <>
-          <div className="appointment-card">
+          <div className="appointment-card" id='NotificationPanel' style={{notificationPanel}}>
             <div className="appointment-card__content">
               <h3 className="appointment-card__title">Appointment Details</h3>
               <p className="appointment-card__message">
