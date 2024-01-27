@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 const AppointmentFormBA = ({ doctorName, doctorSpeciality, onSubmit }) => {
     const [name, setName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
-    const [dateOfAppointment, setDateOfAppointment] = useState('');
-    const [timeOfAppointment, setTimeOfAppointment] = useState('');
+    const [date, setDate] = useState('');
+    const [time, setTime] = useState('');
     const [selectedSlot, setSelectedSlot] = useState(null);
   
     const handleSlotSelection = (slot) => {
@@ -13,11 +13,18 @@ const AppointmentFormBA = ({ doctorName, doctorSpeciality, onSubmit }) => {
   
     const handleFormSubmit = (e) => {
       e.preventDefault();
-      onSubmit({ name, phoneNumber, dateOfAppointment, timeOfAppointment });
+      onSubmit({ name, phoneNumber, date, time });
       setName('');
       setPhoneNumber('');
-      setDateOfAppointment('');
-      setTimeOfAppointment('');
+      setDate('');
+      setTime('');
+
+      localStorage.setItem('name', name);
+      localStorage.setItem('time', time);
+      localStorage.setItem('date', date);
+      localStorage.setItem('phoneNumber', phoneNumber);
+
+      
     };
   
     return (
@@ -47,8 +54,8 @@ const AppointmentFormBA = ({ doctorName, doctorSpeciality, onSubmit }) => {
           <input
             type="date"
             id="date"
-            value={dateOfAppointment}
-            onChange={(e) => setDateOfAppointment(e.target.value)}
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
             required
           />
         </div>
@@ -56,8 +63,8 @@ const AppointmentFormBA = ({ doctorName, doctorSpeciality, onSubmit }) => {
           <label htmlFor="timeofappointment">Book Time Slot:</label>
           <select
             id="time"
-            value={timeOfAppointment}
-            onChange={(e) => setTimeOfAppointment(e.target.value)}
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
             required>
           <option value="Select a Time" disabled selected hidden></option>
           <option value="9:00AM">9:00AM</option>
