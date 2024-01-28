@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import DoctorCardBA from '../DoctorCardBA/DoctorCardBA'
 
 const AppointmentFormBA = ({ doctorName, doctorSpeciality, onSubmit }) => {
     const [name, setName] = useState('');
@@ -19,10 +20,10 @@ const AppointmentFormBA = ({ doctorName, doctorSpeciality, onSubmit }) => {
       setDate('');
       setTime('');
 
-      localStorage.setItem('name', name);
+       /* localStorage.setItem('name', name);
       localStorage.setItem('time', time);
       localStorage.setItem('date', date);
-      localStorage.setItem('phoneNumber', phoneNumber);
+      localStorage.setItem('phoneNumber', phoneNumber); */
 
       
     };
