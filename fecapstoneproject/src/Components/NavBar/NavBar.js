@@ -1,5 +1,6 @@
 import './Navbar.css';
 import { NavLink } from "react-router-dom";
+import { useEffect, useState } from 'react';
 
 const NavBar = () => {
     const [click, setClick] = useState(false);
@@ -57,15 +58,14 @@ const NavBar = () => {
         <div className="Logo">StayHealthy<span>+</span>
         </div>
         <div className="NavItemList">
-            <nav>
-            <NavLink to="/" className="NavItem">Home</NavLink>
-            <NavLink to='/search/doctors' className="NavItem">Appointments</NavLink>
-            <NavLink to='instant-consultation' className="NavItem">Instant Consultation</NavLink>
-            <NavLink className="NavItem">Health Blog</NavLink>
-            <NavLink className="NavItem">Reviews</NavLink>
             {isLoggedIn ? (
-                    <>
-                        <li onClick={handleDropdown} className="HelloUser">
+                    <nav>
+                        <NavLink to="/" className="NavItem">Home</NavLink>
+                        <NavLink to='/search/doctors' className="NavItem">Appointments</NavLink>
+                        <NavLink to='instant-consultation' className="NavItem">Instant Consultation</NavLink>
+                        <NavLink className="NavItem">Health Blog</NavLink>
+                        <NavLink className="NavItem">Reviews</NavLink>
+                        <NavLink onClick={handleDropdown} className="HelloUser">
                             <p>
                                 Hello, {username}
                             </p>
@@ -75,23 +75,27 @@ const NavBar = () => {
                                         <NavLink to="/reports">Your Reports</NavLink>
                                 </select>
                             )}
-                        </li>
+                        </NavLink>
                         
                         <NavLink className="NavButton" onClick={handleLogout}>
                                 Logout
                         </NavLink>
                         
 
-                    </>
+                    </nav>
                 ) : (
-                    <>
-                        <NavLink to="SignUp" className="NavButton">Sign Up</NavLink>
-                        <NavLink to="Login" className="NavButton">Login</NavLink>
-                    </>
+                    <nav>
+            <NavLink to="/" className="NavItem">Home</NavLink>
+            <NavLink to='/search/doctors' className="NavItem">Appointments</NavLink>
+            <NavLink to='instant-consultation' className="NavItem">Instant Consultation</NavLink>
+            <NavLink className="NavItem">Health Blog</NavLink>
+            <NavLink className="NavItem">Reviews</NavLink>
+            <NavLink to='SignUp' className="NavButton">Sign Up</NavLink>
+            <NavLink to='Login' className="NavButton">Login</NavLink>
+                    </nav>
                 )}
-            <NavLink to="SignUp" className="NavButton">Sign Up</NavLink>
-            <NavLink to="Login" className="NavButton">Login</NavLink>
-            </nav>
+                
+            
     </div>
     </div>
 

@@ -56,7 +56,7 @@ export default function Login() {
             <div className="Heading">
                 <div>
                     <p className="SU_header">Login</p>
-                    <p className="SU_headersubtext">Don't have an account? <span><Link to='SignUp'>Sign Up</Link></span></p>
+                    <p className="SU_headersubtext">Don't have an account? <span><Link to='/SignUp'>Sign Up</Link></span></p>
             </div>
         </div>
         <div className="SUF_content">

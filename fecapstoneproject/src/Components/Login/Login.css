@@ -29,7 +29,7 @@ margin-bottom: 20px;
 padding: 0px;
 }
 .SU_headersubtext {
-color: #000;
+color: #000000;
 font-family: 'Sarala', sans-serif;
 font-size: 18px;
 font-style: normal;
@@ -37,8 +37,8 @@ font-weight: 400;
 line-height: normal;
 margin-top: -20px;
 }
-.SU_headersubtext span {
-color: #2358E1;
+.SU_headersubtext a {
+color: #2258df;
 font-family: 'Sarala', sans-serif;
 font-size: 18px;
 font-style: normal;

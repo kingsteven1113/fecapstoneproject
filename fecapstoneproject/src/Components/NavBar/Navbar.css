@@ -108,20 +108,20 @@ a {
 
 .HelloUser {
     color: #000;
-
     font-family: 'Sarala', sans-serif;
-    font-size: 18px;
+    font-size: 14px;
     font-style: normal;
     line-height: normal;
-    margin-right: 55px;
+    display: flex;
+    
 
 }
 
 .HelloUser:hover {
     color: #002FD8;
     font-family: 'Sarala', sans-serif;
-    font-size: 18px;
+    font-size: 14px;
     font-style: normal;
     line-height: normal;
-    margin-right: 55px;
+    
 }
