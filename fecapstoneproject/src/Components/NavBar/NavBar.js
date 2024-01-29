@@ -65,15 +65,13 @@ const NavBar = () => {
                         <NavLink to='instant-consultation' className="NavItem">Instant Consultation</NavLink>
                         <NavLink className="NavItem">Health Blog</NavLink>
                         <NavLink className="NavItem">Reviews</NavLink>
-                        <NavLink onClick={handleDropdown} className="HelloUser">
-                            <p>
-                                Hello, {username}
-                            </p>
+                        <NavLink onClick={handleDropdown} className="NavItem"> Hello, {username}
+                           
                             {showDropdown && (
-                                <select name="" id="">
-                                        <NavLink to="/profile">Your Profile</NavLink>
-                                        <NavLink to="/reports">Your Reports</NavLink>
-                                </select>
+                                <>
+                                        <NavLink className="NavItem HelloUser" to="/profile">Your Profile</NavLink>
+                                        <NavLink className="NavItem HelloUser" to="/reports">Your Reports</NavLink>
+                               </>
                             )}
                         </NavLink>
                         

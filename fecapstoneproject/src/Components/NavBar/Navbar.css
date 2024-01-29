@@ -106,22 +106,9 @@ a {
     cursor: pointer;
 }
 
-.HelloUser {
-    color: #000;
-    font-family: 'Sarala', sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    line-height: normal;
-    display: flex;
-    
-
-}
-
-.HelloUser:hover {
-    color: #002FD8;
-    font-family: 'Sarala', sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    line-height: normal;
+.HelloUser  {
+    display: list-item;
     
 }
+
+
