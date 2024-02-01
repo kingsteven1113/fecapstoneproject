@@ -117,5 +117,5 @@ a {
 }
 
 .dropdown-menu {
-    position: relative;
+    position: absolute;
 }
