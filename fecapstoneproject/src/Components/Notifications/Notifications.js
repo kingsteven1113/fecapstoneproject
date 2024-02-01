@@ -36,7 +36,7 @@ const Notification = ({ children }) => {
             <div className="appointment-card__content">
               <h3 className="appointment-card__title">Appointment Details</h3>
               <p className="appointment-card__message">
-                <strong>Doctor:</strong> {doctorData?.name}
+                <strong>Doctor:</strong> {doctorData.name}
               </p>
 
             <p className="appointment-card__message">

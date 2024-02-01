@@ -108,7 +108,14 @@ a {
 
 .HelloUser  {
     display: list-item;
+    list-style: none;
     
 }
 
+.NavItemList {
+    display: flex;
+}
 
+.dropdown-menu {
+    position: relative;
+}

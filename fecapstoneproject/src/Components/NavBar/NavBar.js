@@ -55,31 +55,37 @@ const NavBar = () => {
 
     return (
         <div className="NavBar">
-        <div className="Logo">StayHealthy<span>+</span>
-        </div>
-        <div className="NavItemList">
+        <NavLink to='/' className="Logo">StayHealthy<span>+</span>
+        </NavLink>
+        <div>
             {isLoggedIn ? (
                     <nav>
-                        <NavLink to="/" className="NavItem">Home</NavLink>
-                        <NavLink to='/search/doctors' className="NavItem">Appointments</NavLink>
-                        <NavLink to='instant-consultation' className="NavItem">Instant Consultation</NavLink>
-                        <NavLink className="NavItem">Health Blog</NavLink>
-                        <NavLink className="NavItem">Reviews</NavLink>
+                        <ul className="NavItemList">
+                        
+                        <li><NavLink to="/" className="NavItem">Home</NavLink></li>
+                        <li><NavLink to='/search/doctors' className="NavItem">Appointments</NavLink></li>
+                        <li><NavLink to='instant-consultation' className="NavItem">Instant Consultation</NavLink></li>
+                        <li><NavLink className="NavItem">Health Blog</NavLink></li>
+                        <li><NavLink className="NavItem">Reviews</NavLink></li>
+                        
+                        <li>
                         <NavLink onClick={handleDropdown} className="NavItem"> Hello, {username}
                            
                             {showDropdown && (
-                                <>
-                                        <NavLink className="NavItem HelloUser" to="/profile">Your Profile</NavLink>
-                                        <NavLink className="NavItem HelloUser" to="/reports">Your Reports</NavLink>
-                               </>
+                                <ul className='dropdown-menu'>
+                                        <li><NavLink className="NavItem HelloUser" to="/profile">Your Profile</NavLink></li>
+                                        <li><NavLink className="NavItem HelloUser" to="/reports">Your Reports</NavLink></li>
+                               </ul>
                             )}
                         </NavLink>
+                        </li>
                         
+                        <li>
                         <NavLink className="NavButton" onClick={handleLogout}>
                                 Logout
                         </NavLink>
-                        
-
+                        </li>
+                        </ul>
                     </nav>
                 ) : (
                     <nav>

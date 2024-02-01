@@ -11,23 +11,43 @@ const DoctorCardBA = ({ name, speciality, experience, ratings, profilePic }) => 
   const [showModal, setShowModal] = useState(false);
   const [appointments, setAppointments] = useState([]);
 
-  const handleBooking = () => {
-    setShowModal(true);
-  };
-
-  const handleCancel = (appointmentId) => {
-    const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
+   // Check if appointment data exists in localStorage
+   useEffect(() => {
+    const storedAppointments = JSON.parse(localStorage.getItem(name));
+    if (storedAppointments) {
+        setAppointments(storedAppointments);
+    }
+}, [name]);
+const handleCancel = (appointmentId) => {
+    const updatedAppointments = appointments.filter(appointment => appointment.id !== appointmentId);
     setAppointments(updatedAppointments);
-  };
+    localStorage.setItem(name, JSON.stringify(updatedAppointments));
+    // remove item from localStorage
+    if (updatedAppointments.length === 0) {
+        localStorage.removeItem(name);
+        localStorage.removeItem("doctorData");
+    }
+    console.log("cancel clicked");
+    window.location.reload();
+};
 
   const handleFormSubmit = (appointmentData) => {
     const newAppointment = {
       id: uuidv4(),
       ...appointmentData,
     };
+
+    const doctorData = {
+      name: name,
+      speciality: speciality,
+    };
+    localStorage.setItem('doctorData', JSON.stringify(doctorData));
+
     const updatedAppointments = [...appointments, newAppointment];
     setAppointments(updatedAppointments);
+    localStorage.setItem(name, JSON.stringify(updatedAppointments));
     setShowModal(false);
+    window.location.reload();
   };
 
   return (

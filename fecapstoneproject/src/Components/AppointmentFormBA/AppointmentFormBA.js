@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import DoctorCardBA from '../DoctorCardBA/DoctorCardBA'
+
 
 const AppointmentFormBA = ({ doctorName, doctorSpeciality, onSubmit }) => {
     const [name, setName] = useState('');
@@ -19,11 +19,6 @@ const AppointmentFormBA = ({ doctorName, doctorSpeciality, onSubmit }) => {
       setPhoneNumber('');
       setDate('');
       setTime('');
-
-       /* localStorage.setItem('name', name);
-      localStorage.setItem('time', time);
-      localStorage.setItem('date', date);
-      localStorage.setItem('phoneNumber', phoneNumber); */
 
       
     };
@@ -51,7 +46,7 @@ const AppointmentFormBA = ({ doctorName, doctorSpeciality, onSubmit }) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="dateofappointment">Date of Appointment:</label>
+          <label htmlFor="date">Date of Appointment:</label>
           <input
             type="date"
             id="date"
@@ -61,7 +56,7 @@ const AppointmentFormBA = ({ doctorName, doctorSpeciality, onSubmit }) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="timeofappointment">Book Time Slot:</label>
+          <label htmlFor="time">Book Time Slot:</label>
           <select
             id="time"
             value={time}
