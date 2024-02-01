@@ -66,7 +66,7 @@ const NavBar = () => {
                         <li><NavLink to='/search/doctors' className="NavItem">Appointments</NavLink></li>
                         <li><NavLink to='instant-consultation' className="NavItem">Instant Consultation</NavLink></li>
                         <li><NavLink className="NavItem">Health Blog</NavLink></li>
-                        <li><NavLink className="NavItem">Reviews</NavLink></li>
+                        <li><NavLink to='/reviews' className="NavItem">Reviews</NavLink></li>
                         
                         <li>
                         <NavLink onClick={handleDropdown} className="NavItem"> Hello, {username}
@@ -93,7 +93,7 @@ const NavBar = () => {
             <NavLink to='/search/doctors' className="NavItem">Appointments</NavLink>
             <NavLink to='instant-consultation' className="NavItem">Instant Consultation</NavLink>
             <NavLink className="NavItem">Health Blog</NavLink>
-            <NavLink className="NavItem">Reviews</NavLink>
+            <NavLink to='/reviews' className="NavItem">Reviews</NavLink>
             <NavLink to='SignUp' className="NavButton">Sign Up</NavLink>
             <NavLink to='Login' className="NavButton">Login</NavLink>
                     </nav>
