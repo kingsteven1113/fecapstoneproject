@@ -24,7 +24,7 @@ function App() {
       <BrowserRouter>
         <Notification>
           <Routes>
-            <Route path='/' element={<LandingPage/>} />
+            <Route path='/fecapstoneproject' element={<LandingPage/>} />
             <Route path='SignUp' element={<SignUp/>} />
             <Route path='Login' element={<Login/>} />
             <Route path="/instant-consultation" element={<InstantConsultation />} />

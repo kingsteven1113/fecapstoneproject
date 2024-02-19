@@ -62,7 +62,7 @@ const NavBar = () => {
                     <nav>
                         <ul className="NavItemList">
                         
-                        <li><NavLink to="/" className="NavItem">Home</NavLink></li>
+                        <li><NavLink to="/fecapstoneproject" className="NavItem">Ho2me</NavLink></li>
                         <li><NavLink to='/search/doctors' className="NavItem">Appointments</NavLink></li>
                         <li><NavLink to='instant-consultation' className="NavItem">Instant Consultation</NavLink></li>
                         <li><NavLink className="NavItem">Health Blog</NavLink></li>
