@@ -1,5 +1,6 @@
 {
   "name": "fecapstoneproject",
+  "homepage": "https://kingsteven1113.github.io/fecapstoneproject",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,14 +11,16 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-number-format": "^5.3.1",
-    "react-router-dom": "^6.21.3",
+    "react-router-dom": "^6.22.1",
     "react-scripts": "5.0.1",
     "reactjs-popup": "^2.0.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && rm -rdf server/build && mv build server/",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -38,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }

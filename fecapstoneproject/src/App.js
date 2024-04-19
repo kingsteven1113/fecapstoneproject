@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect } from 'react';
 import SignUp from './Components/SignUp/SignUp';
 import Login from './Components/Login/Login';
-import InstantConsultation from './Components/InstantConsultationBooking/InstantConsultationBooking/InstantConsultation';
+import InstantConsultation from './Components/InstantConsultationBooking/IC';
 import BookingAppointments from './Components/BookingAppointments/BookingAppointments/BookingAppointments';
 import Notification from './Components/Notifications/Notifications';
 import FindDoctorSearchBA from './Components/FindDoctorSearchBA/FindDoctorSearchBA';
@@ -24,7 +24,7 @@ function App() {
       <BrowserRouter>
         <Notification>
           <Routes>
-            <Route path='/' element={<LandingPage/>} />
+            <Route path='/fecapstoneproject' element={<LandingPage/>} />
             <Route path='SignUp' element={<SignUp/>} />
             <Route path='Login' element={<Login/>} />
             <Route path="/instant-consultation" element={<InstantConsultation />} />
